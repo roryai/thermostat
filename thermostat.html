@@ -15,14 +15,19 @@
     <!-- Bootstrap switch -->
     <link href="bootstrap-switch.css" rel="stylesheet">
     <script src="bootstrap-switch.js"></script>
+    <!-- Our code -->
+    <script src="jasmine-standalone-2.5.2/src/thermostat.js"></script>
+    <script>
+      thermostat = new Thermostat();
+    </script>
   </head>
 
   <body>
     <div class="col-sm-3">
-      <input type="checkbox" name="my-checkbox" checked>
+      <input id="on-off" type="checkbox" name="my-checkbox" checked>
     </div>
 
-    <div class="col-sm-6">
+    <div class="col-sm-6" id="display-div">
       <p id="display"> 20 </p>
     </div>
 
@@ -34,5 +39,9 @@
 
   <script>
     $("[name='my-checkbox']").bootstrapSwitch();
+    $( "#up" ).click(function() {
+      thermostat.up(1);
+      $("#display").html(thermostat.tempReader());
+    });
   </script>
 </html>
