@@ -1,4 +1,11 @@
 div{
-font-family: 'Orbitron', sans-serif;
-border: 1px dashed blue;
+  border: 1px dashed blue;
+}
+
+#display{
+  font-family: 'Orbitron', sans-serif;
+}
+
+button{
+  font-size: 5em;
 }
