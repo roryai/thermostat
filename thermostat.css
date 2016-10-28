@@ -54,12 +54,13 @@ div {
   line-height: 150px;
 }
 
-button {
+#up, #down {
   font-size: 1.75em;
   width: 2em;
   height: 2em;
 
 }
+
 
 
 

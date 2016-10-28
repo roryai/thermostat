@@ -12,21 +12,11 @@ $( "#down" ).click(function() {
   $("#display_text").html(thermostat.tempReader());
 });
 
-$('input[name="my-checkbox"]').on('switchChange.bootstrapSwitch', function(event, state) {
-  console.log(this); // DOM element
-  console.log(event); // jQuery event
-  console.log(state); // true | false
-});
-CODE TO PUT CHECKBOX ON PAGE
-$("[name='my-checkbox']").bootstrapSwitch('state', true, false);
-console.log(state)
-$('#on-off').click(function() {
-  console.log(state);
+$('#power_save').click(function() {
   thermostat.changePowerMode();
-  console.log(state);
-  if (thermostat._powerSavingMode == true) {
-    thermostat._powerSavingMode = false;
+  if (thermostat._powerSavingMode) {
+    $('h5').text('ON')
   } else {
-    thermostat._powerSavingMode = true;
+    $('h5').text('OFF')
   }
 });
