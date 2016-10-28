@@ -17,31 +17,39 @@
     <script src="bootstrap-switch.js"></script>
     <!-- Our code -->
     <script src="jasmine-standalone-2.5.2/src/thermostat.js"></script>
+
     <script>
       thermostat = new Thermostat();
     </script>
   </head>
 
   <body>
-    <div class="col-sm-3">
-      <input id="on-off" type="checkbox" name="my-checkbox" checked>
-    </div>
+    <div id="contains_everything">
 
-    <div class="col-sm-6" id="display-div">
-      <p id="display"> 20 </p>
-    </div>
+      <div id="a">
+        <input id="on-off" type="checkbox" name="my-checkbox" checked>
+        <div id="light">
 
-    <div class="col-sm-3">
-      <div><button id="up">+</button></div>
-      <div><button id="down">-</button></div>
+        </div>
+      </div>
+
+      <div id="b">
+        <p id="display_text"> 20 </p>
+      </div>
+
+      <div id="c">
+        <div><button id="up">+</button></div>
+        <div><button id="down">-</button></div>
+      </div>
+
     </div>
+    <script src="thermostat_logic.js"></script>
   </body>
 
-  <script>
-    $("[name='my-checkbox']").bootstrapSwitch();
-    $( "#up" ).click(function() {
-      thermostat.up(1);
-      $("#display").html(thermostat.tempReader());
-    });
-  </script>
+  
 </html>
+
+
+<!-- <div id="test_div">
+  <p id="display"> 20 </p>
+</div> -->
